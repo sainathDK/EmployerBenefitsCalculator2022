@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\API\BPCalcAPI.DTOs\BPCalcAPI.DTOs.csproj" />
     <ProjectReference Include="..\..\api\BPCalcAPI.Mappers\BPCalcAPI.Mappers.csproj" />
+    <ProjectReference Include="..\..\api\BPCalcAPI.Rules\BPCalcAPI.Rules.csproj" />
   </ItemGroup>
 
 </Project>
