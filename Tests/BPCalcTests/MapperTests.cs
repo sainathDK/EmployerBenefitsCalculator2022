@@ -11,7 +11,7 @@ namespace BPCalcTests
         public void RequestToWorkflow()
         {
 
-            int x = 11;
+            int x = 10;
 
             x.ShouldBe(10);
 
