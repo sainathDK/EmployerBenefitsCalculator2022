@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BPCalcAPI.DTOs\BPCalcAPI.DTOs.csproj" />
+    <ProjectReference Include="..\..\BPCalcAPI.Mapper.Interfaces\BPCalcAPI.Mapper.Interfaces.csproj" />
+    <ProjectReference Include="..\..\BPCalcAPI.Mappers\BPCalcAPI.Mappers.csproj" />
+    <ProjectReference Include="..\..\BPCalcAPI.Rules\BPCalcAPI.Rules.csproj" />
+    <ProjectReference Include="..\..\BPCalcAPI.Task.Interfaces\BPCalcAPI.Task.Interfaces.csproj" />
+    <ProjectReference Include="..\..\BPCalcAPI.Tasks\BPCalcAPI.Tasks.csproj" />
+    <ProjectReference Include="..\..\BPCalcAPI.Workflow.Interfaces\BPCalcAPI.Workflow.Interfaces.csproj" />
+    <ProjectReference Include="..\..\BPCalcAPI.Workflows\BPCalcAPI.Workflows.csproj" />
+  </ItemGroup>
+
+</Project>

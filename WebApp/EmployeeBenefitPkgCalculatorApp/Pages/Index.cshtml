@@ -1,0 +1,141 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Main";
+}
+
+<style>
+    .table-condensed {
+        font-size: 12px;
+        width: 80;
+    }
+
+    .table td, .table th {
+        padding: 0.15rem;
+    }
+
+    .EmpheaderRow th {
+        background-color: #006DCC;
+        color: white;
+    }
+
+    .firstCol {
+        width: 15%;
+    }
+</style>
+
+<div class="text-left">
+    <span>Below is URL for the REST API. Please verfiy and change if needed, before you proceed with benefit cost calculation</span>
+    <input type="text" id="txtUrlForCalcSvc" value="http://localhost:5069/api/v1/BenefitPkgCalculator" style="width:600px;" />
+    <br />
+    <br />
+    <span>Use the "Add Employee" and then the "Add Dependant" buttons to add Employee and if applicable, the dependant(s)</span>
+    <br />
+    <br />
+    @*<table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Complete Name or First Name</th>
+                    <th>Member Type</th>
+                    <th>Cost Of Benefits - Annually</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>Mark Otto</td>
+                    <td>Employee</td>
+                    <td>$1,000</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th>Dependent(s)</th>
+                    <th>Complete Name or First Name</th>
+                    <th>Member Type</th>
+                    <th>Cost Of Benefits - Annually</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>Lucy</td>
+                    <td>Spouse</td>
+                    <td>$500.00</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Tyler</td>
+                    <td>Child</td>
+                    <td>$500.00</td>
+                </tr>
+            </tbody>
+        </table>*@
+<form id="dummyForm">
+    <div id="mainContainer" class="border border-primary"></div>
+</form>
+
+    <input type="button" class="btn btn-outline-primary btn-sm" id="btnAddEmployee" value="Add Employee">
+    <input type="button" class="btn btn-outline-primary btn-sm" id="btnAddDependent" value="Add Dependent">
+    @*<input type="button" class="btn btn-outline-primary btn-sm" id="btnDelete" value="Delete Selections">*@
+    <input type="button" class="btn btn-outline-primary btn-sm" id="btnResetPage" value="Reset Page">
+    <input type="button" class="btn btn-outline-primary btn-sm" id="btnCompute" value="Calculate Benefits">
+
+
+</div>
+
+
+
+@section PageScripts{
+    <script src="~/js/Index.js" asp-append-version="true"></script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="errorModalPopUp" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Problem calculating employee benefit costs</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="error">Something went wrong while processing the calculations. Please try again. If error persists, contact helpdesk at 999-999-9999</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="postProcessingConfirmation" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Calculations completed</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="info">Benefit calculations have been completed. Please review the costs.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+
+    </div>
+</div>

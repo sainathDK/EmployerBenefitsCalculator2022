@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BPCalcAPI.DTOs\BPCalcAPI.DTOs.csproj" />
+    <ProjectReference Include="..\BPCalcAPI.Workflow.Interfaces\BPCalcAPI.Workflow.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

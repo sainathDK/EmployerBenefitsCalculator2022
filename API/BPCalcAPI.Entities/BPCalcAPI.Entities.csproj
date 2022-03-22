@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BPCalcApi.Entities.Interfaces\BPCalcApi.Entities.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
